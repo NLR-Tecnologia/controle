@@ -1,0 +1,679 @@
+<html>
+	<head>
+	
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+	<script src="NoSleep.min.js"></script>
+    
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+    <title>
+      Chrome Browser
+    </title>
+    <style>
+	
+#grid::-webkit-scrollbar {
+  display: none;
+}
+	
+#info {
+    font-size: 20px;
+    }
+    #div_start {
+    float: right;
+    }
+    #headline {
+    text-decoration: none
+    }
+    #results {
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 150px;
+    }
+    #start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+    }
+    .interim {
+    color: gray;
+    }
+    .final {
+    color: black;
+    padding-right: 3px;
+    }
+    .button {
+    display: none;
+    }
+    .marquee {
+    margin: 20px auto;
+    }
+
+    #buttons {
+    margin: 10px 0;
+    position: relative;
+    top: -50px;
+    }
+
+    #copy {
+    margin-top: 20px;
+    }
+
+    #copy > div {
+    display: none;
+    margin: 0 70px;
+    }
+    </style>
+    <style>
+a.c1 {font-weight: normal;}
+
+
+/* Safari */
+:-webkit-full-screen {
+  background-color: yellow;
+}
+
+/* IE11 */
+:-ms-fullscreen {
+  background-color: yellow;
+}
+
+/* Standard syntax */
+:fullscreen {
+  background-color: yellow;
+}
+    </style>
+	
+
+
+	<script>
+	
+	var noSleep = new NoSleep();
+	noSleep.enable();
+	
+	
+	function click1() {
+
+		//document.getElementById("start_button").click();
+		alert("teste");
+	}
+	
+	function click0() {
+
+		document.getElementById("start_button").click();
+	}
+	
+	function comando() {
+		
+		
+		
+		
+		
+		
+		var falado=final_span.innerHTML;
+		var falado_low=falado.toLowerCase();
+		
+		
+		var comando = document.getElementById("comando");
+		comando.innerHTML=falado;
+		
+		
+		
+		//DESLIGA TV
+		const exec1 = falado_low.split("desliga");
+		if(exec1.length>1)
+		{
+			const exec1 = falado_low.split("tv");
+			if(exec1.length>1)
+			{
+			
+				var print="https://192.168.0.184/api/comando/desligatv";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.184/api/comando/desligatv", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							//document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		//LIGA TV
+		const exec = falado_low.split("liga");
+		if(exec.length>1)
+		{
+			const exec = falado_low.split("tv");
+			if(exec.length>1)
+			{
+			
+				var print="https://192.168.0.184/api/comando/ligatv";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.184/api/comando/ligatv", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							//document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+
+		//CANAL MAIS
+		const exec2 = falado_low.split("canal");
+		if(exec2.length>1)
+		{
+			const exec2 = falado_low.split("mais");
+			if(exec2.length>1)
+			{
+			
+				var print="https://192.168.0.184/api/comando/cmais";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.184/api/comando/cmais";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.184/api/comando/cmais", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							//document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		
+		//CANAL MENOS
+		const exec3 = falado_low.split("canal");
+		if(exec3.length>1)
+		{
+			const exec3 = falado_low.split("menos");
+			if(exec3.length>1)
+			{
+			
+				var print="https://192.168.0.184/api/comando/cmenos";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.184/api/comando/cmenos";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.184/api/comando/cmenos", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							//document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		
+		//VOLUME MAIS
+		const exec4 = falado_low.split("volume");
+		if(exec4.length>1)
+		{
+			const exec4 = falado_low.split("mais");
+			if(exec4.length>1)
+			{
+			
+				var print="http://192.168.0.184/v+";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v+";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v%2B", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		
+		
+		//VOLUME MENOS
+		const exec5 = falado_low.split("volume");
+		if(exec5.length>1)
+		{
+			const exec5 = falado_low.split("menos");
+			if(exec5.length>1)
+			{
+			
+				var print="http://192.168.0.184/v-";
+				var data = new Date();
+				var mseg    = data.getMilliseconds();   // 0-999
+				comando2.innerHTML=print+"  "+mseg;
+				//document.getElementById('iframe').src = "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v-";
+				
+				
+				let xhr = new XMLHttpRequest();
+
+				xhr.open('GET', "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v-", true);
+
+				xhr.onreadystatechange = () => {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							console.log(JSON.parse(xhr.responseText));
+							document.write(xhr.responseText);
+							
+						}
+					}
+				};
+
+				xhr.send();
+				return;
+					
+					
+					/*
+					console.log(this.responseText);
+					var oReq = new XMLHttpRequest();
+					oReq.onload = reqListener;
+					oReq.open("get", "http://192.168.0.184/power", true);
+					oReq.send();
+					*/
+				
+				
+				
+				
+			}
+			
+			
+		}
+		
+		
+
+
+		
+	}
+
+	</script>
+	
+
+	
+	
+  </head>
+  <body class="" id="grid" onload="click0()">
+ 
+    <div class="browser-landing" id="main">
+      <div class="compact marquee-stacked" id="marquee">
+        <div class="marquee-copy">
+          <h1>
+            <a class="c1" href="https://192.168.0.238/run/run2.html">Controle</a>
+          </h1>
+        </div>
+      </div>
+      <div class="compact marquee">
+        <div id="info" style="visibility: visible;">
+          <p id="info_start" style="display: inline;">
+            Click on 
+          </p>
+          <p id="info_speak_now" style="display:none">
+            Speak now.
+          </p>
+          <p id="info_no_speech" style="display:none">
+            No speech was detected. You may need to adjust your <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">microphone
+            settings</a>.
+          </p>
+          <p id="info_no_microphone" style="display:none">
+            No microphone was found. Ensure that a microphone is installed and that
+            <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+            microphone settings</a> are configured correctly.
+          </p>
+          <p id="info_allow" style="display:none">
+            Click the "Allow" button above to enable your microphone.
+          </p>
+          <p id="info_denied" style="display:none">
+            Permission to use microphone was denied.
+          </p>
+          <p id="info_blocked" style="display:none">
+            Permission to use microphone is blocked. To change, go to
+            chrome://settings/contentExceptions#media-stream
+          </p>
+          <p id="info_upgrade" style="display:none">
+            Web Speech API is not supported by this browser. Upgrade to <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
+          </p>
+        </div>
+        <div id="div_start">
+          <button id="start_button" onclick="startButton(event)" style="display: inline-block;">
+          </button>
+        </div>
+        <div id="results">
+          <span class="final" id="final_span"></span> <span class="interim" id="interim_span"></span>
+        </div>
+        <div id="copy">
+          <button class="button" id="copy_button" onclick="copyButton()">Copy and Paste</button>
+          <div id="copy_info">
+            <p>
+              Press Control-C to copy text.
+            </p>
+            <p>
+              (Command-C on Mac.)
+            </p>
+          </div><button class="button" id="email_button" onclick="emailButton()">Create
+          Email</button>
+          <div id="email_info">
+            <p>
+              Text sent to default email application.
+            </p>
+            <p>
+              (See chrome://settings/handlers to change.)
+            </p>
+          </div>
+        </div>
+        <div class="compact marquee" id="div_language">
+          <select id="select_language" onchange="updateCountry()">
+            <option value="34">Português</option>
+		  </select>
+		  &nbsp;&nbsp;
+		  <select id="select_dialect" style="visibility: visible;">
+            <option value="pt-BR">Brasil</option>
+		  </select>
+        </div>
+      
+		<div class="compact marquee" id="comando" style="width:300px;height:60px;">
+			
+		</div>
+		<div class="compact marquee" id="comando2" style="width:300px;height:60px;">
+			
+		</div>
+		<iframe id="iframe" src="" style="display:none;"></iframe>
+	  
+	  </div>
+    </div>
+	<script nonce="">
+
+showInfo('info_start');
+
+var final_transcript = '';
+var recognizing = false;
+var ignore_onend;
+var start_timestamp;
+if (!('webkitSpeechRecognition' in window)) {
+  upgrade();
+} else {
+  start_button.style.display = 'inline-block';
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  recognition.onstart = function() {
+    recognizing = true;
+    showInfo('info_speak_now');
+    //start_img.src = '/intl/en/chrome/assets/common/images/content/mic-animate.gif';
+  };
+
+  recognition.onerror = function(event) {
+    if (event.error == 'no-speech') {
+      //start_img.src = '/intl/en/chrome/assets/common/images/content/mic2.gif';
+      showInfo('info_no_speech');
+ 
+	  document.getElementById("start_img").click();
+    }
+    if (event.error == 'audio-capture') {
+      //start_img.src = '/intl/en/chrome/assets/common/images/content/mic3.gif';
+      showInfo('info_no_microphone');
+      ignore_onend = true;
+    }
+    if (event.error == 'not-allowed') {
+      if (event.timeStamp - start_timestamp < 100) {
+        showInfo('info_blocked');
+      } else {
+        showInfo('info_denied');
+      }
+      ignore_onend = true;
+    }
+	
+  };
+
+  recognition.onend = function() {
+    recognizing = false;
+    if (ignore_onend) {
+      return;
+    }
+    //start_img.src = '/intl/en/chrome/assets/common/images/content/mic5.gif';
+	click0();
+    if (!final_transcript) {
+      showInfo('info_start');
+      return;
+    }
+    showInfo('');
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
+      range.selectNode(document.getElementById('final_span'));
+      window.getSelection().addRange(range);
+    }
+    if (create_email) {
+      create_email = false;
+      createEmail();
+    }
+	
+  };
+
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    if (typeof(event.results) == 'undefined') {
+      recognition.onend = null;
+      recognition.stop();
+      upgrade();
+      return;
+    }
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+    interim_span.innerHTML = linebreak(interim_transcript);
+    if (final_transcript || interim_transcript) {
+      showButtons('inline-block');
+    }
+  };
+}
+
+function upgrade() {
+  start_button.style.visibility = 'hidden';
+  showInfo('info_upgrade');
+}
+
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+
+var first_char = /\S/;
+function capitalize(s) {
+  return s.replace(first_char, function(m) { return m.toUpperCase(); });
+}
+
+function startButton(event) {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = select_dialect.value;
+  recognition.start();
+  ignore_onend = false;
+  comando();
+  final_span.innerHTML = '';
+  interim_span.innerHTML = '';
+  //start_img.src = '/intl/en/chrome/assets/common/images/content/mic-slash.gif';
+  showInfo('info_allow');
+  showButtons('none');
+  start_timestamp = event.timeStamp;
+}
+
+function showInfo(s) {
+  if (s) {
+    for (var child = info.firstChild; child; child = child.nextSibling) {
+      if (child.style) {
+        child.style.display = child.id == s ? 'inline' : 'none';
+      }
+    }
+    info.style.visibility = 'visible';
+  } else {
+    info.style.visibility = 'hidden';
+  }
+}
+
+var current_style;
+function showButtons(style) {
+  if (style == current_style) {
+    return;
+  }
+  current_style = style;
+  copy_button.style.display = style;
+  email_button.style.display = style;
+  copy_info.style.display = 'none';
+  email_info.style.display = 'none';
+}
+    </script>
+  
+
+</body>
+</html>
