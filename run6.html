@@ -145,9 +145,10 @@
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
 
 
-          let xhr = new XMLHttpRequest();
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "http://192.168.0.184/api/comando/desligatv", true);
+          fetch("http://192.168.0.184/api/comando/desligatv");
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -159,8 +160,23 @@
             }
           };
 
-          xhr.send();
-          return;
+          xhr.send();*/
+          openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
+      function delay(time) {
+        return new Promise(resolve => setTimeout(resolve, time));
+      }
+      
+      async function test() {
+        console.log('start timer');
+        await delay(2000);
+        openedWindow.close();
+        console.log('after 2 second');
+      }
+      test();
+
+      openedWindow.location.href='http://192.168.0.184/api/comando/cmais';
+      
+      return;
 
 
           /*
@@ -195,6 +211,7 @@
           let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "http://192.168.0.184/api/comando/ligatv", true);
+          fetch('http://192.168.0.184/api/comando/ligatv');
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
