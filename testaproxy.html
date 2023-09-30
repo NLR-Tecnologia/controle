@@ -3,7 +3,16 @@
   
   function cmd(valor){
    openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=10, height=10, visible=none', '');
-   openedWindow.close();
+   function delay(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
+    }
+    
+    async function test() {
+      console.log('start timer');
+      await delay(200);
+      openedWindow.close();
+      console.log('after 1 second');
+    }
     
   }
 </script>
