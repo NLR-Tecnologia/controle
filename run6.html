@@ -7,6 +7,7 @@
 
   <meta charset="utf-8">
   <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <title>
     Chrome Browser
   </title>
@@ -137,7 +138,7 @@
         const exec1 = falado_low.split("tv");
         if (exec1.length > 1) {
 
-          var print = "https://192.168.0.184/api/comando/desligatv";
+          var print = "http://192.168.0.184/api/comando/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -146,7 +147,7 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.184/api/comando/desligatv", true);
+          xhr.open('GET', "http://192.168.0.184/api/comando/desligatv", true);
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -184,7 +185,7 @@
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
 
-          var print = "https://192.168.0.184/api/comando/ligatv";
+          var print = "http://192.168.0.184/api/comando/ligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -193,7 +194,7 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.184/api/comando/ligatv", true);
+          xhr.open('GET', "http://192.168.0.184/api/comando/ligatv", true);
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -232,7 +233,7 @@
         const exec2 = falado_low.split("mais");
         if (exec2.length > 1) {
 
-          var print = "https://192.168.0.184/api/comando/cmais";
+          var print = "http://192.168.0.184/api/comando/cmais";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -241,7 +242,7 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.184/api/comando/cmais", true);
+          xhr.open('GET', "http://192.168.0.184/api/comando/cmais", true);
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -280,7 +281,7 @@
         const exec3 = falado_low.split("menos");
         if (exec3.length > 1) {
 
-          var print = "https://192.168.0.184/api/comando/cmenos";
+          var print = "http://192.168.0.184/api/comando/cmenos";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -289,7 +290,7 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.184/api/comando/cmenos", true);
+          xhr.open('GET', "http://192.168.0.184/api/comando/cmenos", true);
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
