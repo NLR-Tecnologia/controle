@@ -6,13 +6,23 @@
     
     function cmd(valor){
 
-      fetch(valor).then(function(response) {
-        return response.json();
-      }).then(function(data) {
-        console.log(data);
-      }).catch(function(err) {
-        console.log('Fetch Error :-S', err);
-      });
+
+       let xhr = new XMLHttpRequest();
+
+          xhr.open('GET', "https://nlr-tecnologia.github.io/controle/comando.html", true);
+          fetch("https://nlr-tecnologia.github.io/controle/comando.html");
+
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4) {
+              if (xhr.status == 200) {
+                console.log(JSON.parse(xhr.responseText));
+                //document.write(xhr.responseText);
+
+              }
+            }
+          };
+
+      
      //openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',);
       function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
