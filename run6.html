@@ -101,6 +101,10 @@
 
   <script>
 
+    function janela(){
+      openedWindow = window.open('http://1921.168.0.184/api/comando/cmenos','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
+    }
+
     var noSleep = new NoSleep();
     noSleep.enable();
 
@@ -161,20 +165,8 @@
           };
 
           xhr.send();*/
-          openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
-      function delay(time) {
-        return new Promise(resolve => setTimeout(resolve, time));
-      }
-      
-      async function test() {
-        console.log('start timer');
-        await delay(2000);
-        openedWindow.close();
-        console.log('after 2 second');
-      }
-      test();
 
-      openedWindow.location.href='http://192.168.0.184/api/comando/cmais';
+      openedWindow.location.href=print;
       
       return;
 
@@ -208,7 +200,7 @@
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
 
-          let xhr = new XMLHttpRequest();
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "http://192.168.0.184/api/comando/ligatv", true);
           fetch('http://192.168.0.184/api/comando/ligatv');
@@ -224,8 +216,11 @@
           };
 
           xhr.send();
+          return;*/
+         
+          openedWindow.location.href=print;
+          
           return;
-
 
           /*
           console.log(this.responseText);
@@ -242,205 +237,10 @@
 
 
       }
-
-
-      //CANAL MAIS
-      const exec2 = falado_low.split("canal");
-      if (exec2.length > 1) {
-        const exec2 = falado_low.split("mais");
-        if (exec2.length > 1) {
-
-          var print = "http://192.168.0.184/api/comando/cmais";
-          var data = new Date();
-          var mseg = data.getMilliseconds();   // 0-999
-          comando2.innerHTML = print + "  " + mseg;
-          //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/cmais";
-
-
-          let xhr = new XMLHttpRequest();
-
-          xhr.open('GET', "http://192.168.0.184/api/comando/cmais", true);
-
-          xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
-                console.log(JSON.parse(xhr.responseText));
-                //document.write(xhr.responseText);
-
-              }
-            }
-          };
-
-          xhr.send();
-          return;
-
-
-          /*
-          console.log(this.responseText);
-          var oReq = new XMLHttpRequest();
-          oReq.onload = reqListener;
-          oReq.open("get", "http://192.168.0.184/power", true);
-          oReq.send();
-          */
-
-
-
-
-        }
-
-
-      }
-
-
-      //CANAL MENOS
-      const exec3 = falado_low.split("canal");
-      if (exec3.length > 1) {
-        const exec3 = falado_low.split("menos");
-        if (exec3.length > 1) {
-
-          var print = "http://192.168.0.184/api/comando/cmenos";
-          var data = new Date();
-          var mseg = data.getMilliseconds();   // 0-999
-          comando2.innerHTML = print + "  " + mseg;
-          //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/cmenos";
-
-
-          let xhr = new XMLHttpRequest();
-
-          xhr.open('GET', "http://192.168.0.184/api/comando/cmenos", true);
-
-          xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
-                console.log(JSON.parse(xhr.responseText));
-                //document.write(xhr.responseText);
-
-              }
-            }
-          };
-
-          xhr.send();
-          return;
-
-
-          /*
-          console.log(this.responseText);
-          var oReq = new XMLHttpRequest();
-          oReq.onload = reqListener;
-          oReq.open("get", "http://192.168.0.184/power", true);
-          oReq.send();
-          */
-
-
-
-
-        }
-
-
-      }
-
-
-      //VOLUME MAIS
-      const exec4 = falado_low.split("volume");
-      if (exec4.length > 1) {
-        const exec4 = falado_low.split("mais");
-        if (exec4.length > 1) {
-
-          var print = "http://192.168.0.184/v+";
-          var data = new Date();
-          var mseg = data.getMilliseconds();   // 0-999
-          comando2.innerHTML = print + "  " + mseg;
-          //document.getElementById('iframe').src = "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v+";
-
-
-          let xhr = new XMLHttpRequest();
-
-          xhr.open('GET', "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v%2B", true);
-
-          xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
-                console.log(JSON.parse(xhr.responseText));
-                document.write(xhr.responseText);
-
-              }
-            }
-          };
-
-          xhr.send();
-          return;
-
-
-          /*
-          console.log(this.responseText);
-          var oReq = new XMLHttpRequest();
-          oReq.onload = reqListener;
-          oReq.open("get", "http://192.168.0.184/power", true);
-          oReq.send();
-          */
-
-
-
-
-        }
-
-
-      }
-
-
-
-      //VOLUME MENOS
-      const exec5 = falado_low.split("volume");
-      if (exec5.length > 1) {
-        const exec5 = falado_low.split("menos");
-        if (exec5.length > 1) {
-
-          var print = "http://192.168.0.184/v-";
-          var data = new Date();
-          var mseg = data.getMilliseconds();   // 0-999
-          comando2.innerHTML = print + "  " + mseg;
-          //document.getElementById('iframe').src = "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v-";
-
-
-          let xhr = new XMLHttpRequest();
-
-          xhr.open('GET', "https://192.168.0.238/run/redir.php?url=http://192.168.0.184/v-", true);
-
-          xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
-                console.log(JSON.parse(xhr.responseText));
-                document.write(xhr.responseText);
-
-              }
-            }
-          };
-
-          xhr.send();
-          return;
-
-
-          /*
-          console.log(this.responseText);
-          var oReq = new XMLHttpRequest();
-          oReq.onload = reqListener;
-          oReq.open("get", "http://192.168.0.184/power", true);
-          oReq.send();
-          */
-
-
-
-
-        }
-
-
-      }
-
-
-
-
-
     }
+
+
+ 
 
   </script>
 
@@ -449,7 +249,7 @@
 
 </head>
 
-<body class="" id="grid" onload="click0()">
+<body class="" id="grid" onload="click0(); janela()">
 
   <div class="browser-landing" id="main">
     <div class="compact marquee-stacked" id="marquee">
