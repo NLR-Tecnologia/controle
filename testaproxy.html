@@ -7,7 +7,7 @@
     function cmd(valor){
 
 
-       let xhr = new XMLHttpRequest();
+      /* let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "https://nlr-tecnologia.github.io/controle/comando", true);
           fetch("https://nlr-tecnologia.github.io/controle/comando");
@@ -21,9 +21,9 @@
               }
             }
           };
-
+      */
       
-     //openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',);
+     openedWindow = window.open(valor,'_self',false);
       function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }
