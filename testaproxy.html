@@ -30,11 +30,12 @@
       
       async function test() {
         console.log('start timer');
-        await delay(300);
+        await delay(2000);
         openedWindow.close();
-        console.log('after 1 second');
+        console.log('after 2 second');
       }
       test();
+      openedWindow.location.href='http://192.168.0.184/api/comando/cmais';
       
     }
   </script>
