@@ -1,4 +1,5 @@
 <script>
+        chrome.tabs.onActivated.addListener(moveToFirstPosition);
         async function moveToFirstPosition(activeInfo) {
         try {
           await chrome.tabs.move(activeInfo.tabId, {index: 0});
