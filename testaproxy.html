@@ -3,7 +3,12 @@
   
   function cmd(valor){
    openedWindow = window.open(valor,'_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=10000, top=10000, width=10, height=10, visible=none', '');
-   openedWindow.hide();
+  
+
+     openedWindow.onload = function () {
+       openedWindow.close();
+     };
+    
   }
 </script>
 <input type="button" value="liga tv" onclick="cmd('http://192.168.0.184/api/comando/ligatv');"/><br>
