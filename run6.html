@@ -103,7 +103,20 @@
 
     function janela(){
       openedWindow = window.open('https://nlr-tecnologia.github.io/controle/janela.html','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
-      browser.tabs.goBack();
+      chrome.tabs.onActivated.addListener(moveToFirstPosition);
+
+      async function moveToFirstPosition(activeInfo) {
+        try {
+          await chrome.tabs.move(activeInfo.tabId, {index: 0});
+          console.log("Success.");
+        } catch (error) {
+          if (error == "Error: Tabs cannot be edited right now (user may be dragging a tab).") {
+            setTimeout(() => moveToFirstPosition(activeInfo), 50);
+          } else {
+            console.error(error);
+          }
+        }
+      }
     }
     
     
