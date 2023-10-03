@@ -152,10 +152,10 @@
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
 
 
-          /*let xhr = new XMLHttpRequest();
+          let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "http://192.168.0.184/api/comando/desligatv", true);
-          fetch("http://192.168.0.184/api/comando/desligatv");
+          xhr.open('GET', "https://192.168.0.220/api/desligatv", true);
+          fetch("https://192.168.0.220/api/desligatv");
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -167,9 +167,9 @@
             }
           };
 
-          xhr.send();*/
+          xhr.send();
 
-      openedWindow.location.href=print;
+      //openedWindow.location.href=print;
       
       return;
 
@@ -203,10 +203,10 @@
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
 
-          /*let xhr = new XMLHttpRequest();
+          let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "http://192.168.0.184/api/comando/ligatv", true);
-          fetch('http://192.168.0.184/api/comando/ligatv');
+          xhr.open('GET', "https://192.168.0.220/api/ligatv", true);
+          fetch('https://192.168.0.220/api/ligatv');
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -219,9 +219,8 @@
           };
 
           xhr.send();
-          return;*/
          
-          openedWindow.location.href=print;
+          //openedWindow.location.href=print;
           
           return;
 
