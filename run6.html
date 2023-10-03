@@ -154,8 +154,8 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.220/api/desligatv", true);
-          fetch("https://192.168.0.220/api/desligatv");
+          xhr.open('GET', "https://192.168.0.220/rest_api/api/desligatv", true);
+          fetch("https://192.168.0.220/rest_api/api/desligatv");
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -205,8 +205,8 @@
 
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.220/api/ligatv", true);
-          fetch('https://192.168.0.220/api/ligatv');
+          xhr.open('GET', "https://192.168.0.220/rest_api/api/ligatv", true);
+          fetch('https://192.168.0.220/rest_api/api/ligatv');
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
