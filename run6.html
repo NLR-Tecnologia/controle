@@ -165,19 +165,19 @@
 
 
 
-          $.ajax({
+         /* $.ajax({
                     url: http,
                     jsonp: "callback",
                     dataType: "jsonp",
                     success: function( data ) {
                         console.log( data );
                     }
-                });
+                });*/
 
 
 
           
-          /*let xhr = new XMLHttpRequest();
+          let xhr = new XMLHttpRequest();
 
           xhr.open('GET', https, false);
           
@@ -191,10 +191,10 @@
               }
             }
           };
-
+          xhr.withCredentials = true;
           xhr.send();
 
-          return;*/
+          return;
         
         //openedWindow.location.href=https;
         //openedWindow.location.href=print;
@@ -233,19 +233,19 @@
 
 
 
-            $.ajax({
+            /*$.ajax({
                     url: http,
                     jsonp: "callback",
                     dataType: "jsonp",
                     success: function( data ) {
                         console.log( data );
                     }
-                });
+                });*/
 
 
 
 
-            /*let xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
 
             xhr.open('GET', https, false);
 
@@ -258,11 +258,12 @@
 
                 }
             }
-            };
+            }
 
+            xhr.withCredentials = true;
             xhr.send();
 
-            return;*/
+            return;
 
             //openedWindow.location.href=https;
             //openedWindow.location.href=print;
