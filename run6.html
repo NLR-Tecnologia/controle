@@ -108,7 +108,7 @@
           console.log("I am the third log after 3 seconds");
       },3000);
 
-      openedWindow.getElementById("sproceed-link").click();
+      //openedWindow.getElementById("sproceed-link").click();
       
       //openedWindow.close();
 
@@ -154,14 +154,15 @@
 
           var print = "http://192.168.0.184/api/comando/desligatv";
           var https = "https://192.168.0.58:8443/rest_api/api/desligatv";
+          var http = "http://192.168.0.184/api/comando/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
 
-        //fetch('https://192.168.0.220/rest_api/api/desligatv');
+        fetch(http);
           
-          let xhr = new XMLHttpRequest();
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', https, false);
           
@@ -178,7 +179,7 @@
 
           xhr.send();
 
-          return;
+          return;*/
         
         //openedWindow.location.href=https;
         //openedWindow.location.href=print;
@@ -208,14 +209,15 @@
 
           var print = "http://192.168.0.184/api/comando/ligatv";
           var https = "https://192.168.0.58:8443/rest_api/api/ligatv";
+          var http = "http://192.168.0.184/api/comando/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
-        //fetch('https://192.168.0.220/rest_api/api/ligatv');
+        fetch(http);
           
-          let xhr = new XMLHttpRequest();
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', https, false);
           
@@ -232,7 +234,7 @@
 
           xhr.send();
 
-          return;
+          return;*/
          
           //openedWindow.location.href=https;
           
