@@ -102,12 +102,15 @@
   <script>
 
     function janela(){
-      openedWindow = window.open('https://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
+      openedWindow = window.open('https://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=30, height=30, visible=none',false);
       
       setTimeout(function(){
-          console.log("I am the third log after 5 seconds");
+          console.log("I am the third log after 3 seconds");
       },3000);
-      openedWindow.close();
+
+      openedWindow.document.getElementById("sproceed-link").click();
+      
+      //openedWindow.close();
 
     }
     
