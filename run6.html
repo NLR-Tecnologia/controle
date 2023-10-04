@@ -101,6 +101,7 @@
 
   <script>
 
+
     function janela(){
       openedWindow = window.open('https://192.168.0.58:8443','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=30, height=30, visible=none',false);
       
@@ -160,7 +161,21 @@
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
 
-        fetch(http);
+          //fetch(http);
+
+
+
+          $.ajax({
+                    url: http,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    success: function( data ) {
+                        console.log( data );
+                    }
+                });
+
+
+
           
           /*let xhr = new XMLHttpRequest();
 
@@ -215,7 +230,22 @@
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
-        fetch(http);
+
+          
+          //fetch(http);
+
+
+
+                $.ajax({
+                    url: http,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    success: function( data ) {
+                        console.log( data );
+                    }
+                });
+
+
           
           /*let xhr = new XMLHttpRequest();
 
