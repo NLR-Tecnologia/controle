@@ -1,7 +1,7 @@
 {
-“Student”:[{
-“Name”:”Sravan”,
-“Roll”:7058,
-“subject”:”java”
-}]
+  "user": {
+    "id": "11",
+    "animal": "Bob",
+    "idade": “2”
+  }
 }
