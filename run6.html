@@ -155,7 +155,7 @@
 
           var print = "http://192.168.0.184/api/comando/desligatv";
           var https = "https://192.168.0.58:8443/rest_api/api/desligatv";
-          var http = "http://192.168.0.184/api/comando/desligatv";
+          var http = "http://192.168.0.220/rest_api/api/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -223,7 +223,7 @@
 
             var print = "http://192.168.0.184/api/comando/ligatv";
             var https = "https://192.168.0.58:8443/rest_api/api/ligatv";
-            var http = "http://192.168.0.184/api/comando/ligatv";
+            var http = "http://192.168.0.220/rest_api/api/ligatv";
             var data = new Date();
             var mseg = data.getMilliseconds();   // 0-999
             comando2.innerHTML = print + "  " + mseg;
@@ -233,14 +233,21 @@
 
 
 
-            $.ajax({
-                    url: http,
-                    jsonp: "callback",
-                    dataType: "jsonp",
-                    success: function( data ) {
-                        console.log( data );
-                    }
-                });
+                    //Create a SCRIPT element.
+                    var script = document.createElement("script");
+        
+                    //Set the Type.
+                    script.type = "text/javascript";
+        
+                    //Set the source to the URL the JSON Service.
+                    script.src = print;
+
+                    script.id = "jsonp_id";
+        
+                //Append the script element to the HEAD section.
+                    document.getElementsByTagName("head")[0].appendChild(script);
+
+                    document.getElementById('jsonp_id').remove();
 
 
 
