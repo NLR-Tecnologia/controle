@@ -236,14 +236,17 @@
 
 
 
-                $.ajax({
-                    url: http,
-                    jsonp: "callback",
-                    dataType: "jsonp",
-                    success: function( data ) {
-                        console.log( data );
-                    }
-                });
+                //Create a SCRIPT element.
+                var script = document.createElement("script");
+ 
+                //Set the Type.
+                script.type = "text/javascript";
+
+                //Set the source to the URL the JSON Service.
+                script.src = http;
+
+                //Append the script element to the HEAD section.
+                document.getElementsByTagName("head")[0].appendChild(script);
 
 
           
