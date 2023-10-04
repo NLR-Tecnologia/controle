@@ -148,9 +148,9 @@
 
 
       //DESLIGA TV
-       const exec = falado_low.split("desliga");
+       var exec = falado_low.split("desliga");
       if (exec.length > 1) {
-        const exec = falado_low.split("tv");
+        exec = falado_low.split("tv");
         if (exec.length > 1) {
 
           var print = "http://192.168.0.184/api/comando/desligatv";
