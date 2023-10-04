@@ -102,7 +102,7 @@
   <script>
 
     function janela(){
-      openedWindow = window.open('https://nlr-tecnologia.github.io/controle/janela.html','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
+      openedWindow = window.open('https://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
 
     }
     
@@ -140,38 +140,41 @@
 
 
       //DESLIGA TV
-      const exec1 = falado_low.split("desliga");
-      if (exec1.length > 1) {
-        const exec1 = falado_low.split("tv");
-        if (exec1.length > 1) {
+      const exec = falado_low.split("desliga");
+      if (exec.length > 1) {
+        const exec = falado_low.split("tv");
+        if (exec.length > 1) {
 
           var print = "http://192.168.0.184/api/comando/desligatv";
+          var https = "https://192.168.0.220/rest_api/api/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
 
-
-          let xhr = new XMLHttpRequest();
+        //fetch('https://192.168.0.220/rest_api/api/desligatv');
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "https://controledns.ydns.eu/rest_api/api/desligatv", false);
-         /*// fetch("https://192.168.0.220/rest_api/api/desligatv");
+          
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
               if (xhr.status == 200) {
-                //console.log(JSON.parse(xhr.responseText));
+                console.log(JSON.parse(xhr.responseText));
                 //document.write(xhr.responseText);
 
               }
             }
-          };*/
+          };
 
           xhr.send();
 
+          return;*/
+         
+          openedWindow.location.href=https;
+
       //openedWindow.location.href=print;
-      
-      return;
 
 
           /*
@@ -197,16 +200,17 @@
         if (exec.length > 1) {
 
           var print = "http://192.168.0.184/api/comando/ligatv";
+          var https = "https://192.168.0.220/rest_api/api/ligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
-
-          let xhr = new XMLHttpRequest();
+        //fetch('https://192.168.0.220/rest_api/api/ligatv');
+          /*let xhr = new XMLHttpRequest();
 
           xhr.open('GET', "https://controledns.ydns.eu/rest_api/api/ligatv", false);
-          /*//fetch('https://192.168.0.220/rest_api/api/ligatv');
+          
 
           xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
@@ -216,13 +220,14 @@
 
               }
             }
-          };*/
+          };
 
           xhr.send();
+
+          return;*/
          
-          //openedWindow.location.href=print;
+          openedWindow.location.href=https;
           
-          return;
 
           /*
           console.log(this.responseText);
