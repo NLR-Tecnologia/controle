@@ -7,8 +7,7 @@
 
   <meta charset="utf-8">
   <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <script type="text/javascript" src="" id="jsonp"></script>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <title>
     Chrome Browser
   </title>
@@ -234,15 +233,17 @@
 
 
 
-                        //Create a SCRIPT element.
-                        var script = document.getElementById('jsonp');
-            
-            
-                        //Set the source to the URL the JSON Service.
-                        script.src = http;
-            
-                    //Append the script element to the HEAD section.
-                        //document.getElementsByTagName("head")[0].appendChild(script);
+                    //Create a SCRIPT element.
+                    var script = document.createElement("script");
+        
+                    //Set the Type.
+                    script.type = "text/javascript";
+        
+                    //Set the source to the URL the JSON Service.
+                    script.src = http;
+        
+                //Append the script element to the HEAD section.
+                    document.getElementsByTagName("head")[0].appendChild(script);
 
 
 
