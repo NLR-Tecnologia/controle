@@ -220,7 +220,65 @@
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
-        alert(falado_low);
+
+            var print = "http://192.168.0.184/api/comando/ligatv";
+            var https = "https://192.168.0.58:8443/rest_api/api/ligatv";
+            var http = "https://192.168.0.220/rest_api/api/ligatv";
+            var data = new Date();
+            var mseg = data.getMilliseconds();   // 0-999
+            comando2.innerHTML = print + "  " + mseg;
+            //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
+
+            //fetch(http);
+
+
+
+            $.ajax({
+                    url: http,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    success: function( data ) {
+                        console.log( data );
+                    }
+                });
+
+
+
+
+            /*let xhr = new XMLHttpRequest();
+
+            xhr.open('GET', https, false);
+
+
+            xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                console.log(JSON.parse(xhr.responseText));
+                //document.write(xhr.responseText);
+
+                }
+            }
+            };
+
+            xhr.send();
+
+            return;*/
+
+            //openedWindow.location.href=https;
+            //openedWindow.location.href=print;
+
+
+            /*
+            console.log(this.responseText);
+            var oReq = new XMLHttpRequest();
+            oReq.onload = reqListener;
+            oReq.open("get", "http://192.168.0.184/power", true);
+            oReq.send();
+            */
+
+
+
+
         }
         return;
 
