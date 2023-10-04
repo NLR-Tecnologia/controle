@@ -166,7 +166,7 @@
 
 
           $.ajax({
-                    url: http,
+                    url: https,
                     jsonp: "callback",
                     dataType: "jsonp",
                     success: function( data ) {
@@ -233,21 +233,14 @@
 
 
 
-                    //Create a SCRIPT element.
-                    var script = document.createElement("script");
-        
-                    //Set the Type.
-                    script.type = "text/javascript";
-        
-                    //Set the source to the URL the JSON Service.
-                    script.src = print;
-
-                    script.id = "jsonp_id";
-        
-                //Append the script element to the HEAD section.
-                    document.getElementsByTagName("head")[0].appendChild(script);
-
-                    document.getElementById('jsonp_id').remove();
+            $.ajax({
+                    url: https,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    success: function( data ) {
+                        console.log( data );
+                    }
+                });
 
 
 
