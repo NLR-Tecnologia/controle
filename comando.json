@@ -1,7 +1,5 @@
 {
-  "user": {
+  "Comando": {
     "id": "11",
-    "animal": "Bob",
-    "idade": "2"
   }
 }
