@@ -217,7 +217,7 @@
       }
 
       //LIGA TV
-      const exec = falado_low.split("liga");
+      exec = falado_low.split("liga");
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
@@ -228,13 +228,15 @@
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
-          //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/desligatv";
+          //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
+
+          
           //fetch(http);
 
 
 
-          $.ajax({
+                $.ajax({
                     url: http,
                     jsonp: "callback",
                     dataType: "jsonp",
@@ -242,7 +244,6 @@
                         console.log( data );
                     }
                 });
-
 
 
           
@@ -264,10 +265,9 @@
           xhr.send();
 
           return;*/
-        
-        //openedWindow.location.href=https;
-        //openedWindow.location.href=print;
-
+         
+          //openedWindow.location.href=https;
+          
 
           /*
           console.log(this.responseText);
