@@ -148,7 +148,7 @@
 
 
       //DESLIGA TV
-       exec = falado_low.split("desliga");
+       const exec = falado_low.split("desliga");
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
@@ -216,16 +216,11 @@
       }
 
       //LIGA TV
-      const exec = falado_low.split("liga");
+      exec = falado_low.split("liga");
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
-
-          alert(falado_low);
-
-
-
-
+        alert(falado_low);
         }
 
       }
