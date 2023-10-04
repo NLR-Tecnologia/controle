@@ -102,7 +102,7 @@
   <script>
 
     function janela(){
-      openedWindow = window.open('https://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=30, height=30, visible=none',false);
+      openedWindow = window.open('https://192.168.0.58:8443','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=30, height=30, visible=none',false);
       
       setTimeout(function(){
           console.log("I am the third log after 3 seconds");
@@ -153,7 +153,7 @@
         if (exec.length > 1) {
 
           var print = "http://192.168.0.184/api/comando/desligatv";
-          var https = "https://192.168.0.220/rest_api/api/desligatv";
+          var https = "https://192.168.0.58:8443/rest_api/api/desligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -163,7 +163,7 @@
           
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.220/rest_api/api/desligatv", false);
+          xhr.open('GET', https, false);
           
 
           xhr.onreadystatechange = () => {
@@ -207,7 +207,7 @@
         if (exec.length > 1) {
 
           var print = "http://192.168.0.184/api/comando/ligatv";
-          var https = "https://192.168.0.220/rest_api/api/ligatv";
+          var https = "https://192.168.0.58:8443/rest_api/api/ligatv";
           var data = new Date();
           var mseg = data.getMilliseconds();   // 0-999
           comando2.innerHTML = print + "  " + mseg;
@@ -217,7 +217,7 @@
           
           let xhr = new XMLHttpRequest();
 
-          xhr.open('GET', "https://192.168.0.220/rest_api/api/ligatv", false);
+          xhr.open('GET', https, false);
           
 
           xhr.onreadystatechange = () => {
