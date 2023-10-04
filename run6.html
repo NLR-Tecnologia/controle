@@ -102,7 +102,7 @@
   <script>
 
     function janela(){
-      openedWindow = window.open('http://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
+      openedWindow = window.open('https://192.168.0.220/','_blank', 'toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=50000, top=50000, width=10, height=10, visible=none',false);
       
       setTimeout(function(){
           console.log("I am the third log after 5 seconds");
@@ -132,7 +132,7 @@
 
 
 
-
+        
 
       var falado = valor;
       var falado_low = falado.toLowerCase();
@@ -140,7 +140,6 @@
 
       var comando = document.getElementById("comando");
       comando.innerHTML = falado;
-
 
 
       //DESLIGA TV
@@ -198,7 +197,7 @@
       }
 
       //LIGA TV
-      const exec = falado_low.split("liga");
+      exec = falado_low.split("liga");
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
