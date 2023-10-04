@@ -221,7 +221,7 @@
       if (exec.length > 1) {
         const exec = falado_low.split("tv");
         if (exec.length > 1) {
-        alert("ligatv");
+
           var print = "http://192.168.0.184/api/comando/ligatv";
           var https = "https://192.168.0.58:8443/rest_api/api/ligatv";
           var http = "https://192.168.0.220/rest_api/api/ligatv";
@@ -230,23 +230,19 @@
           comando2.innerHTML = print + "  " + mseg;
           //document.getElementById('iframe').src = "https://192.168.0.184/api/comando/ligatv";
 
-
-          
           //fetch(http);
 
 
 
-                //Create a SCRIPT element.
-                var script = document.createElement("script");
- 
-                //Set the Type.
-                script.type = "text/javascript";
+          $.ajax({
+                    url: http,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    success: function( data ) {
+                        console.log( data );
+                    }
+                });
 
-                //Set the source to the URL the JSON Service.
-                script.src = http;
-
-                //Append the script element to the HEAD section.
-                document.getElementsByTagName("head")[0].appendChild(script);
 
 
           
@@ -268,9 +264,10 @@
           xhr.send();
 
           return;*/
-         
-          //openedWindow.location.href=https;
-          
+        
+        //openedWindow.location.href=https;
+        //openedWindow.location.href=print;
+
 
           /*
           console.log(this.responseText);
